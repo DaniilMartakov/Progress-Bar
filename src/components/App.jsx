@@ -9,19 +9,25 @@ import Navbar from './NavBar';
 // import New from './New';
 // import PrivateRoute from './PrivateRoute';
 import Registration from './Registration';
-// import Show from './Show';
+import Show from './Show';
+import Inputs from './Inputs';
+import Shablone from './shablone';
+
 
 function App({
   entries, entry, user: currentUser, logo, name, message,
 }) {
   const [user, setUser] = useState(currentUser || null);
+  const [inputs, setInputs] = useState({});
   return (
     <div className="container">
       {user ? (<Navbar user={user} setUser={setUser} logo={logo} name={name} message={message} />) : <><h4 className="message">Привет! Это корпоративный портал ООО “Высокая Гора”.</h4> <h4>Чтобы получить доступ к сайту - обратись в департамент HR.</h4></>}
       {/* <Header user={user} setUser={setUser} /> */}
       <div className="">
         <Routes>
-          <Route path="/" element={<LogIn setUser={setUser} />} />
+          <Route path="/new" element={<Inputs setInputs={setInputs} />} />
+          <Route path="/shablone" element={<Shablone inputs={inputs} />} />
+
           <Route path="/homepage" element={<HomePage setUser={setUser} message={message} />} />
           <Route path="/signUp" element={<Registration setUser={setUser} />} />
           {/* <Route path="/" element={<Entries user={user} entries={entries} />} /> */}
