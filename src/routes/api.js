@@ -35,4 +35,20 @@ router.route('/logOut')
     res.sendStatus(200);
   });
 
+router.route('/all_shablons')
+  .get(async (req, res) => {})
+  .post(async (req, res) => {}); // создать
+
+router.route('/all_shablons/:id')
+  .get(async (req, res) => {}) // конкретный шаблон по id
+  .patch(async (req, res) => {}) // change  po id
+  .delete(async (req, res) => {}); // delete po id
+
+router.route('/users')
+  .get(async (req, res) => {})
+  .post(async (req, res) => {}); // create new user
+
+router.route('/users/:id')
+  .patch(async (req, res) => {}) // change  user po id
+  .delete(async (req, res) => {}); // delete user po id
 export default router;

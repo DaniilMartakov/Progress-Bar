@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function Navbar({
-  logo, name, setUser, user,
+  name, setUser, user,
 }) {
   const navigate = useNavigate();
   const clickHandler = async (e) => {
