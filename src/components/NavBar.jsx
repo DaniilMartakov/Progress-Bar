@@ -10,44 +10,33 @@ export default function Navbar({
     const response = await fetch('/api/v1/logOut');
     if (response.ok) {
       setUser(null);
-      navigate('/homepage');
+      navigate('/');
     }
   };
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark theme">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark theme at-right">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">{logo}</a>
-        {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon" />
-        </button> */}
-        <h1>{name}</h1>
+        <a className="navbar-brand" href="#"><img src="images/mountain.png" alt="logo" width="60px" height="40px" /></a>
+        <h1 style={{ color: 'white' }}>{name}</h1>
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul className="navbar-nav">
+          <ul className="navbar-nav to-right ">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/homepage">Home</Link>
+              <Link className="nav-link active" aria-current="page" to="/homepage">Все листы</Link>
             </li>
-            {!user && (
-            <>
-              <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/logIn">LogIn</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/signUp">SignUp</Link>
-              </li>
-            </>
+            <li className="nav-item">
+              <Link className="nav-link active" aria-current="page" to="/homepage">Мои листки</Link>
+            </li>
+            {user.id === 1 && (
+            <li className="nav-item">
+              <Link className="nav-link active" aria-current="page" to="/homepage">Пользователи</Link>
+            </li>
             )}
-            {user && (
-              <li className="nav-item">
-                <Link onClick={clickHandler} className="nav-link active" aria-current="page" to="/">LogOut</Link>
-              </li>
-            )}
+            <li className="nav-item">
+              <Link onClick={clickHandler} className="nav-link active" aria-current="page" to="/">LogOut</Link>
+            </li>
           </ul>
-          {/* <h4 className="navbar-brand">{categoryName}</h4> */}
         </div>
       </div>
-      {/* <div className="container-fluid">
-        <a className="navbar-brand">Navbar</a>
-      </div> */}
     </nav>
   );
 }

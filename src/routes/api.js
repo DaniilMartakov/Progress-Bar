@@ -5,26 +5,6 @@ import { User } from '../db/models';
 
 const router = Router();
 
-router.route('/signUp')
-  .post(async (req, res) => {
-    const { name, username, password } = req.body;
-
-    if (!username || !password || !name) return res.json({ message: 'Invalid email, name or password', status: 400 });
-    const hashPassword = await hash(password, 10);
-
-    try {
-      const newUser = await User.create({ name, username, password: hashPassword });
-      req.session.user = { id: newUser.id, username: newUser.username, name: newUser.name };
-      res.json({
-        id: newUser.id, username: newUser.username, name: newUser.name, status: 200,
-      });
-    } catch (err) {
-      console.error(err);
-      console.log('Error in api.js, route /signUp');
-      return res.json({ message: 'Such email already existas', status: 400 });
-    }
-  });
-
 router.route('/logIn')
   .post(async (req, res) => {
     const { username, password } = req.body;

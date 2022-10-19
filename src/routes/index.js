@@ -5,7 +5,7 @@ import { User } from '../db/models';
 const router = Router();
 
 router.get('/', async (req, res) => {
-  const initState = { };
+  const initState = { logo: 'logo', name: 'Высокая гора', message: 'Привет! Это корпоративный портал ООО “Высокая Гора”. Чтобы получить доступ к сайту - обратись в департамент HR.' };
   res.render('Layout', initState);
 });
 
