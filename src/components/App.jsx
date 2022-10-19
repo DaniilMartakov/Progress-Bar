@@ -10,17 +10,22 @@ import New from './New';
 import PrivateRoute from './PrivateRoute';
 import Registration from './Registration';
 import Show from './Show';
+import Inputs from './Inputs';
+import Shablone from './shablone';
 
 function App({
   entries, entry, user: currentUser, logo, name, message,
 }) {
   const [user, setUser] = useState(currentUser || null);
+  const [inputs, setInputs] = useState({});
   return (
     <div className="container">
       <Navbar user={user} setUser={setUser} logo={logo} name={name} message={message} />
       {/* <Header user={user} setUser={setUser} /> */}
       <div className="">
         <Routes>
+          <Route path="/new" element={<Inputs setInputs={setInputs} />} />
+          <Route path="/shablone" element={<Shablone inputs={inputs} />} />
           <Route path="/homepage" element={<HomePage setUser={setUser} message={message} />} />
           <Route path="/logIn" element={<LogIn setUser={setUser} />} />
           <Route path="/signUp" element={<Registration setUser={setUser} />} />
