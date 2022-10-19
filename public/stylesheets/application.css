@@ -1,0 +1,39 @@
+/* *       - https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors
+/* :after  - https://developer.mozilla.org/en-US/docs/Web/CSS/%3A%3Aafter*/
+/* :before - https://developer.mozilla.org/en-US/docs/Web/CSS/%3A%3Abefore */
+/* *, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+} */
+
+.container {
+  margin: 20px auto;
+  width: 80%;
+  padding: 0px 20px 20px 20px;
+  border: 1px dotted black;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+}
+
+body {
+  background: linear-gradient(138deg, #6df7be -10%, #32eafe 90%);
+  height: 200vh;
+  background-repeat: no-repeat;
+  /* background-size: contain; */
+}
+
+.theme {
+  /* background: linear-gradient(138deg, #809aa2b4 -10%, #67888cd5 90%); */
+  /* padding: 0px 20px 20px 20px; */
+   /* border: 1px dotted black; */
+   margin-top: 20px;
+   margin-bottom: 40px;
+   border-radius: 6px;
+}
+
+.back {
+  background: rgba(229, 221, 221, 0.3);
+}
+
