@@ -4,7 +4,6 @@ import React from 'react';
 export default function HomePage({ message }) {
   return (
     <>
-      <div>{message}</div>
       <img src="images/mountain.png" alt="logo" />
     </>
   );
