@@ -26,4 +26,12 @@ router.get('/homepage', async (req, res) => {
   res.render('Layout', initState);
 });
 
+router.get('/new', (req, res) => {
+  const initState = { };
+  res.render('Layout', initState);
+});
+router.get('/shablone', (req, res) => {
+  const initState = { };
+  res.render('Layout', initState);
+});
 export default router;
