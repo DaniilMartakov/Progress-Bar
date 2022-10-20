@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { hash, compare } from 'bcrypt';
-import { User } from '../db/models';
+import { User, Shablon } from '../db/models';
 // import authCheck from '../middlewares/authCheck';
 
 const router = Router();
@@ -54,5 +54,12 @@ router.route('/logOut')
     req.session.destroy(); // Завершить сессию
     res.sendStatus(200);
   });
-
+  // router.get('/', async (rec, res) => {
+  //   const allCats = await Shablon.findByPk(1);
+  //   res.json(allCats)
+  // console.log(allCats)
+  // });
 export default router;
+
+//  /all [decs]
+//  /all/:id [decs]

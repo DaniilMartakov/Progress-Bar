@@ -25,6 +25,8 @@ export default function Navbar({
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="/homepage">Home</Link>
+              <Link className="nav-link active" aria-current="page" to="/list/all">all</Link>
+              <Link className="nav-link active" aria-current="page" to="/list/my/:id">my</Link>
             </li>
             {!user && (
             <>

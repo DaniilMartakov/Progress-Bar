@@ -5,9 +5,10 @@ import session from 'express-session';
 import store from 'session-file-store';
 import dotenv from 'dotenv';
 import indexRouter from './routes/index';
-import entriesRouter from './routes/entries';
+// import entriesRouter from './routes/entries';
 import apiRouter from './routes/api';
 import jsxRender from './utils/jsxRendex';
+import lists from './routes/lists';
 
 dotenv.config();
 
@@ -46,8 +47,9 @@ app.use((req, res, next) => {
 
 app.use('/', indexRouter);
 // app.use(authCheck);
-app.use('/entries', entriesRouter);
+// app.use('/entries', entriesRouter);
 app.use('/api/v1/', apiRouter);
+app.use('/list', lists);
 
 app.listen(PORT, () => {
   console.log('Server start on', PORT);

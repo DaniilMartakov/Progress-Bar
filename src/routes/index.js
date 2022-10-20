@@ -1,12 +1,12 @@
 import { Router } from 'express';
 import { redirect } from 'react-router-dom';
-import { User } from '../db/models';
+import { User, Shablon } from '../db/models';
 
 const router = Router();
-
 router.get('/', async (req, res) => {
-  const initState = { };
-  res.render('Layout', initState);
+
+
+  res.render('Layout', {});
 });
 
 router.get('/logIn', async (req, res) => {
