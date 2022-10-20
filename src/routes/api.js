@@ -90,6 +90,15 @@ router.patch('/password', async (req, res) => {
   res.sendStatus(200);
 });
 
+router.patch('/role', async (req, res) => {
+  // console.log(req.body);
+  const user = await User.findByPk(req.body.id);
+  user.password = await hash(req.body.password, 10);
+  console.log(user);
+  user.save();
+  res.sendStatus(200);
+});
+
 export default router;
 
 //  /all [decs]
