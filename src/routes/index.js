@@ -4,25 +4,42 @@ import { User, Shablon } from '../db/models';
 
 const router = Router();
 router.get('/', async (req, res) => {
-
-
-  res.render('Layout', {});
-});
-
-router.get('/logIn', async (req, res) => {
-  const entries = await Entry.findAll({ order: [['id', 'DESC']] });
-  const initState = { entries };
-  res.render('Layout', initState);
-});
-
-router.get('/signUp', async (req, res) => {
-  const entries = await Entry.findAll({ order: [['id', 'DESC']] });
-  const initState = { entries };
+  const initState = { name: 'Высокая гора' };
   res.render('Layout', initState);
 });
 
 router.get('/homepage', async (req, res) => {
-  const initState = { logo: 'logo', name: 'Высокая гора', message: 'Привет! Это корпоративный портал ООО “Высокая Гора”. Чтобы получить доступ к сайту - обратись в департамент HR.' };
+  const initState = { name: 'Высокая гора' };
+  res.render('Layout', initState);
+});
+
+router.get('/new', (req, res) => {
+  const initState = { };
+  res.render('Layout', initState);
+});
+router.get('/shablone', (req, res) => {
+  const initState = { };
+  res.render('Layout', initState);
+});
+
+router.get('/all_shablons', (req, res) => {
+  const initState = { };
+  res.render('Layout', initState);
+});
+
+router.get('/my_shablons', (req, res) => {
+  const initState = { };
+  res.render('Layout', initState);
+});
+
+router.get('/users', async (req, res) => {
+  const allUser = await User.findAll();
+  const initState = { allUser };
+  res.render('Layout', initState);
+});
+
+router.get('/new_user', (req, res) => {
+  const initState = { };
   res.render('Layout', initState);
 });
 
