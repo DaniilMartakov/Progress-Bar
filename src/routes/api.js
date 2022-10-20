@@ -71,12 +71,17 @@ router.route('/users/:id')
   .delete(async (req, res) => {}); // delete user po id
 
 router.post('/addUser', async (req, res) => {
-  const { name, username, password } = req.body;
-  if (!name || !username || !password) return res.json({ status: 400, message: 'Заполни все поля!!!' });
+  const {
+    name, username, password, status,
+  } = req.body;
+  console.log(status);
+  if (!name || !username || !password || !status) return res.json({ status: 400, message: 'Заполните все поля!' });
   const hashPassword = await hash(password, 10);
   try {
-    const newUser = await User.create({ name, username, password: hashPassword });
-    res.json(newUser);
+    const newUser = await User.create({
+      name, username, password: hashPassword, status: !!Number(status),
+    });
+    res.json({ newUser, status: 200 });
   } catch (err) {
     console.error(err);
   }
@@ -86,6 +91,15 @@ router.patch('/password', async (req, res) => {
   const user = await User.findByPk(req.body.id);
   user.password = await hash(req.body.password, 10);
   console.log(user);
+  user.save();
+  res.sendStatus(200);
+});
+
+router.patch('/role', async (req, res) => {
+  // console.log(req.body);
+  const user = await User.findByPk(req.body.id);
+  user.status = !user.status;
+  // console.log(user);
   user.save();
   res.sendStatus(200);
 });

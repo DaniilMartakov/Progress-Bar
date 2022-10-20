@@ -39,6 +39,9 @@ export default function OneUser({ user }) {
                   <input onChange={changeHandler} name="password" type="text" />
                 </div>
               )}
+              <p className="card-text" style={{ color: 'black' }}>{user.status ? 'АДМИН' : 'ПОЛЬЗОВАТЕЛЬ'}</p>
+              <input type="text" />
+              <button type="button">Сменить пароль</button>
             </div>
           )}
         </div>
