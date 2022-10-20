@@ -4,19 +4,17 @@ import { useParams } from 'react-router-dom';
 export default function Shablone({ info, setInfo }) {
   const { id } = useParams();
   useEffect(() => {
-    console.log(id);
     fetch(`/api/v1/one_shablon/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setInfo(data);
-        console.log(info);
       });
   }, []);
-  // console.log(info);
-  const editStatus = (info, name) => {
-    // console.log(name,info)
+  const editStatus = async (info, name) => {
+    // console.log(name, info[name]);
     info[name] = !info[name];
-    fetch(
+    // console.log(name, info[name]);
+    const response = await fetch(
       `/api/v1/one_shablon/${info.id}`,
       {
         method: 'PUT',
@@ -25,16 +23,9 @@ export default function Shablone({ info, setInfo }) {
         },
         body: JSON.stringify({ info, name }),
       },
-    )
-      .then((res) => res.json())
-      .then((el) => setInfo(el));
-    // setInfo((prev) =>{ //prev.map((el) => {
-    //   if (prev.id === id) {
-    //     prev.status = !prev.status;
-    //     return prev;
-    //   }
-    //   return prev;
-    // });
+    );
+    const data = await response.json();
+    setInfo(data);
   };
   return (
     <div

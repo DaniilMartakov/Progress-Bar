@@ -38,7 +38,6 @@ router.route('/logOut')
 router.route('/all_shablons')
   .get(async (req, res) => {
     const allLists = await Shablon.findAll({ order: [['id', 'DESC']] });
-    // console.log(allLists, '4');
     res.json(allLists);
   });
 
@@ -47,12 +46,12 @@ router.route('/one_shablon/:id')
     const shablone = await Shablon.findOne({ where: { id: req.params.id }, include: User });
     // console.log(shablone);
     res.json(shablone);
+  })
+  .put(async (req, res) => {
+    const a = req.body.name;
+    const t = await Shablon.update({ [a]: req.body.info[a] }, { where: { id: Number(req.params.id) } });
+    res.json(t[1]);
   });
-
-router.put('/one_shablon/:id', async (req, res) => {
-  const a = req.body.name;
-  const t = await Shablon.update({ [a]: req.body.info[a] }, { where: { id: Number(req.params.id) } });
-});
 
 router.route('/all_shablons/:id')
   .get(async (req, res) => {
@@ -70,7 +69,7 @@ router.post('/addUser', async (req, res) => {
   const {
     name, username, password, status,
   } = req.body;
-  console.log(status);
+  // console.log(status);
   if (!name || !username || !password || !status) return res.json({ status: 400, message: 'Заполните все поля!' });
   const hashPassword = await hash(password, 10);
   try {
@@ -83,10 +82,10 @@ router.post('/addUser', async (req, res) => {
   }
 });
 router.patch('/password', async (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   const user = await User.findByPk(req.body.id);
   user.password = await hash(req.body.password, 10);
-  console.log(user);
+  // console.log(user);
   user.save();
   res.sendStatus(200);
 });
