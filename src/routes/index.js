@@ -33,8 +33,9 @@ router.get('/my_shablons', (req, res) => {
   res.render('Layout', initState);
 });
 
-router.get('/users', (req, res) => {
-  const initState = { };
+router.get('/users', async (req, res) => {
+  const allUser = await User.findAll();
+  const initState = { allUser };
   res.render('Layout', initState);
 });
 

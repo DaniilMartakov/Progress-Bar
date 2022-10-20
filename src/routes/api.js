@@ -45,10 +45,27 @@ router.route('/all_shablons/:id')
   .delete(async (req, res) => {}); // delete po id
 
 router.route('/users')
-  .get(async (req, res) => {})
+  .get(async (req, res) => {
+    const allUser = await User.findAll();
+    // console.log('db', allUser);
+    res.json(allUser);
+  })
   .post(async (req, res) => {}); // create new user
 
 router.route('/users/:id')
   .patch(async (req, res) => {}) // change  user po id
   .delete(async (req, res) => {}); // delete user po id
+
+router.post('/addUser', async (req, res) => {
+  const { name, username, password } = req.body;
+  if (!name || !username || !password) return res.json({ status: 400, message: 'Заполни все поля!!!' });
+  const hashPassword = await hash(password, 10);
+  try {
+    const newUser = await User.create({ name, username, password: hashPassword });
+    res.json(newUser);
+  } catch (err) {
+    console.error(err);
+  }
+});
+
 export default router;

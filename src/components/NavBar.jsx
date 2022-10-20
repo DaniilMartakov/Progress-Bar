@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function Navbar({
-  name, setUser, user,
+  name, setUser, user, setAllUser, allUser,
 }) {
   const navigate = useNavigate();
   const clickHandler = async (e) => {
@@ -28,7 +28,7 @@ export default function Navbar({
             </li>
             {user.id === 1 && (
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/homepage">Пользователи</Link>
+              <Link  className="nav-link active" aria-current="page" to="/users">Пользователи</Link>
             </li>
             )}
             <li className="nav-item">
