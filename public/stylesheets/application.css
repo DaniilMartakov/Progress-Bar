@@ -83,6 +83,18 @@ form {
   -webkit-box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
   box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
 }
+
+/* #form2 {
+  width: 60%; 
+   margin: 60px auto;
+  background: #efefef;
+  /* padding: 60px 80px 80px 80px; */
+  /* text-align: center;
+  -webkit-box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+} */ */
+
+
 label {
   display: block;
   position: relative;

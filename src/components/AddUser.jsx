@@ -26,9 +26,9 @@ export default function AddUser({ setAllUser }) {
         <div className="card" style={{ width: '400px' }}>
           <h5 style={{ color: 'black' }} onClick={clickHandler} className="card-header">Добавить Пользователя</h5>
           {add && (
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} style={{ "padding": '0', 'background': 'none' }}>
               <div className="card-body">
-                <p className="card-text" style={{ color: 'black' }}>Name</p>
+                <p className="card-text" style={{ color: 'black', 'boxShadow': 'none', 'WebkitBoxShadow': 'none' }}>Name</p>
                 <input type="text" name="name" />
                 <p className="card-text" style={{ color: 'black' }}>Email</p>
                 <input type="text" name="username" />

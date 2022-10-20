@@ -5,7 +5,7 @@ export default function OneUser({ user }) {
   const [add, setAdd] = useState();
   const clickHandler = () => setAdd(!add);
   return (
-    <div className="row justify-content-evenly" style={{ width: '100%', 'margin-bottom': '5px' }}>
+    <div className="row justify-content-evenly" style={{ width: '100%', marginBottom: '5px' }}>
       <div className="col-3" style={{ width: '100%' }}>
         <div className="card" style={{ width: '100%' }}>
           <h5 style={{ color: 'black' }} onClick={clickHandler} className="card-header">{user.name}</h5>
