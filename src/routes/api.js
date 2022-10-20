@@ -95,13 +95,4 @@ router.patch('/role', async (req, res) => {
   res.sendStatus(200);
 });
 
-router.patch('/role', async (req, res) => {
-  // console.log(req.body);
-  const user = await User.findByPk(req.body.id);
-  user.status = !user.status;
-  // console.log(user);
-  user.save();
-  res.sendStatus(200);
-});
-
 export default router;
