@@ -13,7 +13,7 @@ export default function AllLists({ cards, user, setCards }) {
   }, []);
   // console.log(cards, '3');
   return (
-    <div>
+    <div style={{ display: 'flex' , justifyContent: 'space-evenly', position: 'relative'}}>
       { cards?.map((el) => (
         <FormList
           key={el.id}
