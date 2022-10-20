@@ -22,11 +22,11 @@ export default function New({ inputs }) {
   //   };
 
   return (
-    <div>
+    <div className='containercolor'  style={{"text-align": "start", "margin": '10%', "padding": '5%', "color": 'black', 'font-size': "20px"}}>
       <p>
         Привет,
         {' '}
-        {inputs.name}
+        {inputs.nameOfTarget}
         !
         {' '}
         <br />
