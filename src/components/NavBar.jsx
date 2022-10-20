@@ -15,10 +15,10 @@ export default function Navbar({
   };
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark theme at-right">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="/"><img src="/images/mountain.png" alt="logo" width="60px" height="40px" /></a>
-        <h1 style={{ color: 'white' }}>{name}</h1>
-        <div className="collapse navbar-collapse" id="navbarNavDropdown">
+      <div className="container-fluid d-flex justify-content-between w-100">
+        <a className="navbar-brand" href="/list/all"><img src="/images/mountain.png" alt="logo" width="60px" height="40px" /></a>
+        <span className="navbar-brand"><h1 style={{ color: 'white' }}>{name}</h1></span>
+        <div>
           <ul className="navbar-nav to-right ">
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="/list/all">Все листы</Link>

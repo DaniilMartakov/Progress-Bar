@@ -41,12 +41,11 @@ router.route('/all_shablons')
     // console.log(allLists, '4');
     res.json(allLists);
   })
-  .post(async (req, res) => {}); // создать
 
 router.route('/one_shablon/:id')
   .get(async (req, res) => {
     const shablone = await Shablon.findOne({ where: { id: req.params.id }, include: User });
-    console.log(shablone);
+    // console.log(shablone);
     res.json(shablone);
   });
 
@@ -54,21 +53,13 @@ router.route('/all_shablons/:id')
   .get(async (req, res) => {
     const myLists = await Shablon.findAll({ where: { user_id: req.params.id } }, { order: [['id', 'DESC']] });
     res.json(myLists);
-  }) // конкретный шаблон по id
-  .patch(async (req, res) => {}) // change  po id
-  .delete(async (req, res) => {}); // delete po id
+  }); // конкретный шаблон по id
 
 router.route('/users')
   .get(async (req, res) => {
     const allUser = await User.findAll();
-    // console.log('db', allUser);
     res.json(allUser);
-  })
-  .post(async (req, res) => {}); // create new user
-
-router.route('/users/:id')
-  .patch(async (req, res) => {}) // change  user po id
-  .delete(async (req, res) => {}); // delete user po id
+  });
 
 router.post('/addUser', async (req, res) => {
   const {
@@ -104,7 +95,13 @@ router.patch('/role', async (req, res) => {
   res.sendStatus(200);
 });
 
-export default router;
+router.patch('/role', async (req, res) => {
+  // console.log(req.body);
+  const user = await User.findByPk(req.body.id);
+  user.status = !user.status;
+  // console.log(user);
+  user.save();
+  res.sendStatus(200);
+});
 
-//  /all [decs]
-//  /all/:id [decs]
+export default router;
