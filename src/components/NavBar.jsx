@@ -16,15 +16,15 @@ export default function Navbar({
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark theme at-right">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#"><img src="images/mountain.png" alt="logo" width="60px" height="40px" /></a>
+        <a className="navbar-brand" href="/"><img src="/images/mountain.png" alt="logo" width="60px" height="40px" /></a>
         <h1 style={{ color: 'white' }}>{name}</h1>
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav to-right ">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/homepage">Все листы</Link>
+              <Link className="nav-link active" aria-current="page" to="/list/all">Все листы</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/homepage">Мои листки</Link>
+              <Link className="nav-link active" aria-current="page" to="/list/my/:id">Мои листки</Link>
             </li>
             {user.id === 1 && (
             <li className="nav-item">

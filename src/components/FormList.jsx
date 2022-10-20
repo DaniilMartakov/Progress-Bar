@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
-export default function FormList({ el, currUser }) {
+export default function FormList({ el, user }) {
   const [add, setAdd] = useState(false);
   const clickHandler = () => setAdd(!add);
   // const [per, setPer] = useState(0);
@@ -26,9 +26,9 @@ export default function FormList({ el, currUser }) {
               <p className="card-text">{el.team}</p>
               <p className="card-text">{el.coach}</p>
               <p className="card-text">{b}%</p>
-              {/* {currUser && currUser?.id === el.user_id && ( */}
+              {user && user?.id === el.user_id && (
               <Link to="/" className="btn btn-primary">Shablon</Link>
-              {/* )} */}
+              )} 
             </div>
           )}
         </div>

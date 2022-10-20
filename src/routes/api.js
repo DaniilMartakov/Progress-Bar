@@ -36,11 +36,18 @@ router.route('/logOut')
   });
 
 router.route('/all_shablons')
-  .get(async (req, res) => {})
+  .get(async (req, res) => {
+    const allLists = await Shablon.findAll({ order: [['id', 'DESC']] });
+    console.log(allLists, '4');
+    res.json(allLists);
+  })
   .post(async (req, res) => {}); // создать
 
 router.route('/all_shablons/:id')
-  .get(async (req, res) => {}) // конкретный шаблон по id
+  .get(async (req, res) => {
+    const myLists = await Shablon.findAll({ where: { user_id: req.params.id } }, { order: [['id', 'DESC']] });
+    res.json(myLists)
+  }) // конкретный шаблон по id
   .patch(async (req, res) => {}) // change  po id
   .delete(async (req, res) => {}); // delete po id
 

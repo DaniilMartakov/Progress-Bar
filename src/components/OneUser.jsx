@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export default function OneUser({ user }) {
-  console.log(user);
+  // console.log(user);
   const [add, setAdd] = useState();
   const clickHandler = () => setAdd(!add);
   return (

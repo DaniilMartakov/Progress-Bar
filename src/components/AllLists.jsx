@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import FormList from './FormList';
 
-export default function AllLists({ allLists, user }) {
-  const [cards, setCards] = useState(allLists || []);
-  const a = 0;
-  // cards.map((e) => {
-  //   if (e === true) {
-  //     a += 1;
-  //   }
-  // });
-  // const b = ((a / 11) * 100).toFixed();
-  // console.log(b);
+export default function AllLists({ cards, user, setCards }) {
+  useEffect(() => {
+    fetch('/api/v1/all_shablons')
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data, '1');
+        setCards(data)
+        console.log(data, '2');
+      });
+  }, []);
+  console.log(cards, '3');
   return (
     <div>
       { cards?.map((el) => (
