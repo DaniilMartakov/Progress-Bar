@@ -23,12 +23,12 @@ export default function AddUser({ setAllUser }) {
   return (
     <div className="row justify-content-evenly" style={{ width: '400px', 'margin-bottom': '5px' }}>
       <div className="col-3" style={{ width: '400px' }}>
-        <div className="card" style={{ width: '400px' }}>
+        <div className="card" style={{ background: '-webkit-linear-gradient(left, #6df7be -10%, #32eafe)', width: '400px' }}>
           <h5 style={{ color: 'black' }} onClick={clickHandler} className="card-header">Добавить Пользователя</h5>
           {add && (
-            <form onSubmit={handleSubmit} style={{ "padding": '0', 'background': 'none' }}>
+            <form onSubmit={handleSubmit} style={{ padding: '0', background: 'none' }}>
               <div className="card-body">
-                <p className="card-text" style={{ color: 'black', 'boxShadow': 'none', 'WebkitBoxShadow': 'none' }}>Name</p>
+                <p className="card-text" style={{ color: 'black', boxShadow: 'none', WebkitBoxShadow: 'none' }}>Name</p>
                 <input type="text" name="name" />
                 <p className="card-text" style={{ color: 'black' }}>Email</p>
                 <input type="text" name="username" />

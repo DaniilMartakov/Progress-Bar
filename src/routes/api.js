@@ -81,6 +81,14 @@ router.post('/addUser', async (req, res) => {
     console.error(err);
   }
 });
+router.patch('/password', async (req, res) => {
+  console.log(req.body);
+  const user = await User.findByPk(req.body.id);
+  user.password = await hash(req.body.password, 10);
+  console.log(user);
+  user.save();
+  res.sendStatus(200);
+});
 
 export default router;
 
