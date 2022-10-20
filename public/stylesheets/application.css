@@ -165,14 +165,13 @@ label {
 .message {
   margin-top: 2%;
 }
-
-/* .at-right{
-  position: relative;
-
+.card{
+  width: 250px;
 }
 
-.to-right {
-  position: absolute;
-
-} */
+.cardlist{
+  display: flex;
+  /* justify-content: space-evenly;
+  position: relative; */
+  }
 

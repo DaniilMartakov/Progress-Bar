@@ -40,7 +40,7 @@ router.route('/all_shablons')
     const allLists = await Shablon.findAll({ order: [['id', 'DESC']] });
     // console.log(allLists, '4');
     res.json(allLists);
-  })
+  });
 
 router.route('/one_shablon/:id')
   .get(async (req, res) => {
@@ -48,6 +48,11 @@ router.route('/one_shablon/:id')
     // console.log(shablone);
     res.json(shablone);
   });
+
+router.put('/one_shablon/:id', async (req, res) => {
+  const a = req.body.name;
+  const t = await Shablon.update({ [a]: req.body.info[a] }, { where: { id: Number(req.params.id) } });
+});
 
 router.route('/all_shablons/:id')
   .get(async (req, res) => {
