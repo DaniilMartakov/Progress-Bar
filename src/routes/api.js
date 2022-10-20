@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { hash, compare } from 'bcrypt';
-import { User } from '../db/models';
+import { User, Shablon } from '../db/models';
 // import authCheck from '../middlewares/authCheck';
 
 const router = Router();
@@ -69,3 +69,6 @@ router.post('/addUser', async (req, res) => {
 });
 
 export default router;
+
+//  /all [decs]
+//  /all/:id [decs]

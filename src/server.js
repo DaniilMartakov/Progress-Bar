@@ -7,6 +7,7 @@ import dotenv from 'dotenv';
 import indexRouter from './routes/index';
 import apiRouter from './routes/api';
 import jsxRender from './utils/jsxRendex';
+import lists from './routes/lists';
 
 dotenv.config();
 
@@ -46,6 +47,7 @@ app.use((req, res, next) => {
 app.use('/', indexRouter);
 // app.use(authCheck);
 app.use('/api/v1/', apiRouter);
+app.use('/list', lists);
 
 app.listen(PORT, () => {
   console.log('Server start on', PORT);
