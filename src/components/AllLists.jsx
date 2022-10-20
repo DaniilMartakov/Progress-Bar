@@ -6,12 +6,12 @@ export default function AllLists({ cards, user, setCards }) {
     fetch('/api/v1/all_shablons')
       .then((res) => res.json())
       .then((data) => {
-        console.log(data, '1');
+        // console.log(data, '1');
         setCards(data)
-        console.log(data, '2');
+        // console.log(data, '2');
       });
   }, []);
-  console.log(cards, '3');
+  // console.log(cards, '3');
   return (
     <div>
       { cards?.map((el) => (

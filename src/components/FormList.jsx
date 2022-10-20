@@ -27,7 +27,7 @@ export default function FormList({ el, user }) {
               <p className="card-text">{el.coach}</p>
               <p className="card-text">{b}%</p>
               {user && user?.id === el.user_id && (
-              <Link to="/" className="btn btn-primary">Shablon</Link>
+              <Link to={`/one_shablon/${el.id}`} className="btn btn-outline-info">Shablon</Link>
               )} 
             </div>
           )}

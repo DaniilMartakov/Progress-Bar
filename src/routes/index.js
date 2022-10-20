@@ -1,5 +1,4 @@
 import { Router } from 'express';
-import { redirect } from 'react-router-dom';
 import { User, Shablon } from '../db/models';
 
 const router = Router();
@@ -31,6 +30,13 @@ router.get('/my_shablons', (req, res) => {
   const initState = { };
   res.render('Layout', initState);
 });
+
+router.route('/one_shablon/:id')
+  .get(async (req, res) => {
+    const shablone = await Shablon.findOne({ where: { id: req.params.id }, include: User });
+    const initState = { shablone: JSON.parse(JSON.stringify(shablone)) };
+    res.render('Layout', initState);
+  });
 
 router.get('/users', async (req, res) => {
   const allUser = await User.findAll();

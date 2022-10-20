@@ -1,49 +1,46 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
-export default function New({ inputs }) {
-  //   const inputHandler = (e) => {
-  //     setinputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  //   };
-
-  //   const submitHAndler = (e) => {
-  //     e.preventDefault();
-
-  //     if (inputs.nameOfTarget && inputs.nameOfTeam && inputs.nameOfCouch && inputs.nameOfSome) {
-  //       fetch('/', {
-  //         method: 'POST',
-  //         headers: {
-  //           'Content-type': 'application/json',
-  //         },
-  //         body: JSON.stringify(inputs),
-  //       })
-  //         .then(navigate('/'));
-  //     }
-  //   };
-
+export default function Shablone({ info, setInfo }) {
+  const { id } = useParams();
+  useEffect(() => {
+    console.log(id);
+    fetch(`/api/v1/one_shablon/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setInfo(data);
+        console.log(info);
+      });
+  }, []);
+  // console.log(info);
   return (
-    <div className='containercolor'  style={{"text-align": "start", "margin": '10%', "padding": '5%', "color": 'black', 'font-size': "20px"}}>
+    <div
+      className="containercolor"
+      style={{
+        textAlign: 'start', margin: '10%', padding: '5%', color: 'black', fontSize: '20px',
+      }}
+    >
       <p>
         Привет,
         {' '}
-        {inputs.nameOfTarget}
+        {info.name}
         !
         {' '}
         <br />
         И добро пожаловать в команду
         {' '}
-        {inputs.nameOfTeam}
+        {info.team}
         !
         {' '}
         <br />
         Впереди нас ждет интересное путешествие в мир нашей компании, и самым главным проводником будет-
         {' '}
-        {inputs.nameOfCouch}
+        {info.coach}
         {' '}
         <br />
         Мы подготовили для тебя
         {' '}
-        {inputs.nameOfSome}
+        {info.User.name}
         . Процесс выполнения будет сохраняться, поэтому ты можешь закрывать пункты в удобном для тебя порядке.
 
       </p>
@@ -135,7 +132,7 @@ export default function New({ inputs }) {
         <br />
         Команда
         {' '}
-        {inputs.nameOfTeam}
+        {info.team}
         {' '}
         💚
 
