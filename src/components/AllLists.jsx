@@ -7,7 +7,7 @@ export default function AllLists({ cards, user, setCards }) {
       .then((res) => res.json())
       .then((data) => {
         // console.log(data, '1');
-        setCards(data)
+        setCards(data);
         // console.log(data, '2');
       });
   }, []);

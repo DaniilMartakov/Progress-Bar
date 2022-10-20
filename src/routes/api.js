@@ -46,7 +46,7 @@ router.route('/all_shablons')
 router.route('/one_shablon/:id')
   .get(async (req, res) => {
     const shablone = await Shablon.findOne({ where: { id: req.params.id }, include: User });
-    console.log(shablone);
+    // console.log(shablone);
     res.json(shablone);
   });
 
@@ -80,6 +80,10 @@ router.post('/addUser', async (req, res) => {
   } catch (err) {
     console.error(err);
   }
+});
+router.put('/one_shablon/:id', async (req, res) => {
+  const a = req.body.name;
+  const t = await Shablon.update({ [a]: req.body.info[a] }, { where: { id: Number(req.params.id) } });
 });
 
 export default router;

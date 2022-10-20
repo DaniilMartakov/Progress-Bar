@@ -176,4 +176,12 @@ label {
   position: absolute;
 
 } */
+.card{
+  width: 250px;
 
+}
+.cardlist{
+display: flex;
+/* justify-content: space-evenly;
+position: relative; */
+}
