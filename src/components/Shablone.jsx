@@ -4,10 +4,11 @@ import { useParams } from 'react-router-dom';
 export default function Shablone({ info, setInfo }) {
   const { id } = useParams();
   useEffect(() => {
-    console.log(id);
+    // console.log(id);
     fetch(`/api/v1/one_shablon/${id}`)
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         setInfo(data);
         console.log(info);
       });
@@ -21,9 +22,7 @@ export default function Shablone({ info, setInfo }) {
       }}
     >
       <p>
-        Привет,
-
-        {info?.name}
+        Привет, {info?.name}
         !
       </p>
       И добро пожаловать в команду
@@ -39,7 +38,7 @@ export default function Shablone({ info, setInfo }) {
       <br />
       Мы подготовили для тебя
       {' '}
-      {info?.User.name}
+      {info?.target}
       . Процесс выполнения будет сохраняться, поэтому ты можешь закрывать пункты в удобном для тебя порядке.
 
       <p>Нужно подготовить твое рабочее место:</p>

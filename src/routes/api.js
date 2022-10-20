@@ -41,13 +41,25 @@ router.route('/all_shablons')
     // console.log(allLists, '4');
     res.json(allLists);
   })
-  .post(async (req, res) => {}); // создать
+  .post(async (req, res) => { }); // создать
 
 router.route('/one_shablon/:id')
   .get(async (req, res) => {
-    const shablone = await Shablon.findOne({ where: { id: req.params.id }, include: User });
-    console.log(shablone);
+    const shablone = await Shablon.findOne({ where: { id: req.params.id } });
+    // console.log(shablone);
     res.json(shablone);
+  });
+
+router.route('/createshablon')
+  .post(async (req, res) => {
+    console.log(req.body)
+    const {
+      name, team, coach, target, user_id
+    } = req.body;
+    
+    const shablon = await Shablon.create({ name, team, coach, target, user_id });
+    // console.log(shablon)
+    res.json(shablon);
   });
 
 router.route('/all_shablons/:id')
@@ -55,8 +67,8 @@ router.route('/all_shablons/:id')
     const myLists = await Shablon.findAll({ where: { user_id: req.params.id } }, { order: [['id', 'DESC']] });
     res.json(myLists);
   }) // конкретный шаблон по id
-  .patch(async (req, res) => {}) // change  po id
-  .delete(async (req, res) => {}); // delete po id
+  .patch(async (req, res) => { }) // change  po id
+  .delete(async (req, res) => { }); // delete po id
 
 router.route('/users')
   .get(async (req, res) => {
@@ -64,11 +76,11 @@ router.route('/users')
     // console.log('db', allUser);
     res.json(allUser);
   })
-  .post(async (req, res) => {}); // create new user
+  .post(async (req, res) => { }); // create new user
 
 router.route('/users/:id')
-  .patch(async (req, res) => {}) // change  user po id
-  .delete(async (req, res) => {}); // delete user po id
+  .patch(async (req, res) => { }) // change  user po id
+  .delete(async (req, res) => { }); // delete user po id
 
 router.post('/addUser', async (req, res) => {
   const { name, username, password } = req.body;

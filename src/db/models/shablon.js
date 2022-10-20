@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     team: DataTypes.STRING,
     coach: DataTypes.STRING,
+    target: DataTypes.STRING,
     user_id: DataTypes.INTEGER,
     q1: DataTypes.BOOLEAN,
     q2: DataTypes.BOOLEAN,

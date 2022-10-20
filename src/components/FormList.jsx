@@ -29,7 +29,7 @@ export default function FormList({ el, user }) {
               {user && user?.id === el.user_id && (
               <Link to={`/one_shablon/${el.id}`} className="btn btn-outline-info">Shablon</Link>
               )} 
-            </div>
+            </div> 
           )}
         </div>
       </div>
