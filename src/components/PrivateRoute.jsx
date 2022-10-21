@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom';
 function PrivateRoute({ user, children }) {
   return (
     <div>
-      {user ? children : ''}
+      {!user ? children : <Navigate to="/homepage" />}
     </div>
   );
 }

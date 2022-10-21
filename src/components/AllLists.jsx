@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import FormList from './FormList';
 
-export default function AllLists({ cards, user, setCards }) {
+export default function AllLists({
+  cards, user, setCards,
+}) {
   useEffect(() => {
     fetch('/api/v1/all_shablons')
       .then((res) => res.json())
@@ -22,7 +24,6 @@ export default function AllLists({ cards, user, setCards }) {
           key={el.id}
           el={el}
           user={user}
-          // b={b}
         />
       ))}
 

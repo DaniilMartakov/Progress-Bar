@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import AddUser from './AddUser';
 import OneUser from './OneUser';
 
-export default function AllUser({ allUser, setAllUser }) {
+export default function AllUser({ allUser, setAllUser, setUser }) {
   useEffect(() => {
     fetch('/api/v1/users')
       .then((res) => res.json())
@@ -10,11 +10,11 @@ export default function AllUser({ allUser, setAllUser }) {
   }, []);
   return (
     <>
-      <div>
-        {allUser?.map((el) => <OneUser key={el.id} user={el} />)}
+      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '3%' }}>
+        <AddUser setAllUser={setAllUser} />
       </div>
       <div>
-        <AddUser setAllUser={setAllUser} />
+        {allUser?.map((el) => <OneUser key={el.id} user={el} />)}
       </div>
     </>
   );

@@ -72,7 +72,11 @@ body {
 /* body {
     background: -webkit-linear-gradient(left, #8BC34A, #00e1ff);;
 } */
-
+.grad {
+  background: linear-gradient(135deg, #12BCB0 20%, #FABE0E 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 form {
   width: 60%;
   margin: 60px auto;

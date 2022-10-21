@@ -4,7 +4,6 @@ import { Link, useParams } from 'react-router-dom';
 export default function FormList({ el, user }) {
   const [add, setAdd] = useState(false);
   const clickHandler = () => setAdd(!add);
-  // const [per, setPer] = useState(0);
   const { id } = useParams();
   let a = 0;
   const per = Object.values(JSON.parse(JSON.stringify(el)));
@@ -26,7 +25,8 @@ export default function FormList({ el, user }) {
               <p className="card-text">{el.team}</p>
               <p className="card-text">{el.coach}</p>
               <p className="inner" style={{ width: `${b}%` }}>
-                {b}%
+                {b}
+                %
               </p>
               {user && user?.id === el.user_id && (
               <>

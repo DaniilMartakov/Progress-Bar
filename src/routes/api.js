@@ -106,11 +106,15 @@ router.patch('/password', async (req, res) => {
 
 router.patch('/role', async (req, res) => {
   // console.log(req.body);
+  const { status } = req.body;
+  console.log(status);
   const user = await User.findByPk(req.body.id);
-  user.status = !user.status;
+  user.status = !!Number(status);
   // console.log(user);
   user.save();
-  res.sendStatus(200);
+  // res.sendStatus(200);
+  // console.log(user);
+  res.json(user);
 });
 
 export default router;

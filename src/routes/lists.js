@@ -5,6 +5,8 @@ const router = Router();
 
 router.get('/all', async (req, res) => {
   const allLists = await Shablon.findAll({ order: [['id', 'DESC']] });
+  // const shablone = await Shablon.findOne({ where: { id: req.params.id }, include: User });
+  // shablone: JSON.parse(JSON.stringify(shablone))
   res.render('Layout', { allLists });
 });
 router.get('/my/:id', async (req, res) => {
