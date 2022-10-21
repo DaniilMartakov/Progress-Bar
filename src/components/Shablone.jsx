@@ -62,27 +62,27 @@ export default function Shablone({ info, setInfo }) {
       <p>Нужно подготовить твое рабочее место:</p>
       <ul>
         <li style={{ 'list-style-type': 'none' }}>
-          <input type="checkbox" onChange={(e) => editStatus(info, e.target.name)} name="q1" value="" defaultChecked={info.q1} />
+          <input type="checkbox" onChange={(e) => editStatus(info, e.target.name)} name="q1" value="" defaultChecked={info?.q1} />
           {' '}
           Наставник выдал мне пропуск
         </li>
         <li style={{ 'list-style-type': 'none' }}>
-          <input type="checkbox" name="q2" onChange={(e) => editStatus(info, e.target.name)} defaultChecked={info.q2} />
+          <input type="checkbox" name="q2" onChange={(e) => editStatus(info, e.target.name)} defaultChecked={info?.q2} />
           {' '}
           Наставник сообщил пароль от Wi-Fi
         </li>
         <li style={{ 'list-style-type': 'none' }}>
-          <input type="checkbox" name="q3" onChange={(e) => editStatus(info, e.target.name)} defaultChecked={info.q3} />
+          <input type="checkbox" name="q3" onChange={(e) => editStatus(info, e.target.name)} defaultChecked={info?.q3} />
           {' '}
           Системный администратор выдал мне ноутбук
         </li>
         <li style={{ 'list-style-type': 'none' }}>
-          <input type="checkbox" name="q4" onChange={(e) => editStatus(info, e.target.name)} defaultChecked={info.q4} />
+          <input type="checkbox" name="q4" onChange={(e) => editStatus(info, e.target.name)} defaultChecked={info?.q4} />
           {' '}
           Системный администратор выдал мне доступы к почте
         </li>
         <li style={{ 'list-style-type': 'none' }}>
-          <input type="checkbox" name="q5" onChange={(e) => editStatus(info, e.target.name)} defaultChecked={info.q5} />
+          <input type="checkbox" name="q5" onChange={(e) => editStatus(info, e.target.name)} defaultChecked={info?.q5} />
           {' '}
           Ты отправил(-а) офис-менеджеру на почту список необходимой для тебя канцелярии
         </li>
@@ -92,17 +92,17 @@ export default function Shablone({ info, setInfo }) {
         Важно познакомиться с коллегами:
         <ul>
           <li style={{ 'list-style-type': 'none' }}>
-            <input type="checkbox" name="q6" value="" onChange={(e) => editStatus(info, e.target.name)} defaultChecked={info.q6} />
+            <input type="checkbox" name="q6" value="" onChange={(e) => editStatus(info, e.target.name)} defaultChecked={info?.q6} />
             {' '}
             Ты познакомился (-ась) со своим руководителем
           </li>
           <li style={{ 'list-style-type': 'none' }}>
-            <input type="checkbox" name="q7" value="" onChange={(e) => editStatus(info, e.target.name)} defaultChecked={info.q7} />
+            <input type="checkbox" name="q7" value="" onChange={(e) => editStatus(info, e.target.name)} defaultChecked={info?.q7} />
             {' '}
             Ты написал(-а) сообщение в командный чат
           </li>
           <li style={{ 'list-style-type': 'none' }}>
-            <input type="checkbox" name="q8" value="" onChange={(e) => editStatus(info, e.target.name)} defaultChecked={info.q8} />
+            <input type="checkbox" name="q8" value="" onChange={(e) => editStatus(info, e.target.name)} defaultChecked={info?.q8} />
             {' '}
             Напиши имена трех твоих коллег по отделу: ____________
           </li>
@@ -113,12 +113,12 @@ export default function Shablone({ info, setInfo }) {
         Важно пройти оформление в отделе кадров:
         <ul>
           <li style={{ 'list-style-type': 'none' }}>
-            <input type="checkbox" name="q9" value="" onChange={(e) => editStatus(info, e.target.name)} defaultChecked={info.q9} />
+            <input type="checkbox" name="q9" value="" onChange={(e) => editStatus(info, e.target.name)} defaultChecked={info?.q9} />
             {' '}
             Ты отправил (-а)  сканды документы на оформление в отдел кадров
           </li>
           <li style={{ 'list-style-type': 'none' }}>
-            <input type="checkbox" name="q10" value="" onChange={(e) => editStatus(info, e.target.name)} defaultChecked={info.q10} />
+            <input type="checkbox" name="q10" value="" onChange={(e) => editStatus(info, e.target.name)} defaultChecked={info?.q10} />
             {' '}
             Ты подписал (-а) соглашение о коммерческой тайне
           </li>
@@ -128,12 +128,12 @@ export default function Shablone({ info, setInfo }) {
         А теперь самое время работать:
         <ul>
           <li style={{ 'list-style-type': 'none' }}>
-            <input type="checkbox" name="q11" value="" onChange={(e) => editStatus(info, e.target.name)} defaultChecked={info.q11} />
+            <input type="checkbox" name="q11" value="" onChange={(e) => editStatus(info, e.target.name)} defaultChecked={info?.q11} />
             {' '}
             Получи свою первую задачу у руководителя
           </li>
           <li style={{ 'list-style-type': 'none' }}>
-            <input type="checkbox" name="q12" value="" onChange={(e) => editStatus(info, e.target.name)} defaultChecked={info.q12} />
+            <input type="checkbox" name="q12" value="" onChange={(e) => editStatus(info, e.target.name)} defaultChecked={info?.q12} />
             {' '}
             Создай подпись в почте по корпоративному шаблону
           </li>

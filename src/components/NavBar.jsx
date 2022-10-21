@@ -24,7 +24,7 @@ export default function Navbar({
               <Link className="nav-link active" aria-current="page" to="/list/all">Все листы</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/list/my/:id">Мои листки</Link>
+              <Link className="nav-link active" aria-current="page" to={`/list/my/${user.id}`}>Мои листки</Link>
             </li>
             {user.id === 1 && (
             <li className="nav-item">
