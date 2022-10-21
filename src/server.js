@@ -16,7 +16,7 @@ const FileStore = store(session);
 
 const sessionConfig = {
   name: 'user_sid', // Имя куки для хранения id сессии. По умолчанию - connect.sid
-  secret: 'test', // Секретное слово для шифрования, может быть любым
+  secret: process.env.SESSION_SECRET || 'test', // Секретное слово для шифрования, может быть любым
   store: new FileStore(),
   resave: false, // Пересохранять ли куку при каждом запросе
   saveUninitialized: false, // Создавать ли сессию без инициализации ключей в req.session
