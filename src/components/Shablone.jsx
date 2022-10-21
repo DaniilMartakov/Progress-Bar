@@ -139,6 +139,7 @@ export default function Shablone({ info, setInfo }) {
 
       </p>
 
+
     </div>
   );
 }
