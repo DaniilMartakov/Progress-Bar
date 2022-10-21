@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 export default function Navbar({
-  name, setUser, user,
+  name, setUser, user, setAllUser, allUser,
 }) {
   const navigate = useNavigate();
   const clickHandler = async (e) => {
@@ -15,24 +15,24 @@ export default function Navbar({
   };
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark theme at-right">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="#"><img src="images/mountain.png" alt="logo" width="60px" height="40px" /></a>
-        <h1 style={{ color: 'white' }}>{name}</h1>
-        <div className="collapse navbar-collapse" id="navbarNavDropdown">
+      <div className="container-fluid d-flex justify-content-between w-100">
+        <a className="navbar-brand" href="/list/all"><img src="/images/mountain.png" alt="logo" width="60px" height="40px" /></a>
+        <span className="navbar-brand"><h1 className="grad">{name}</h1></span>
+        <div>
           <ul className="navbar-nav to-right ">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/homepage">Все листы</Link>
+              <NavLink style={({ isActive }) => ({ color: isActive ? 'greenyellow' : 'white' })} className="nav-link active" aria-current="page" to="/list/all">Все листы</NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/homepage">Мои листки</Link>
+              <NavLink style={({ isActive }) => ({ color: isActive ? 'greenyellow' : 'white' })} className="nav-link active" aria-current="page" to={`/list/my/${user.id}`}>Мои листки</NavLink>
             </li>
             {user.id === 1 && (
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/homepage">Пользователи</Link>
+              <NavLink style={({ isActive }) => ({ color: isActive ? 'greenyellow' : 'white' })} className="nav-link active" aria-current="page" to="/users">Пользователи</NavLink>
             </li>
             )}
             <li className="nav-item">
-              <Link onClick={clickHandler} className="nav-link active" aria-current="page" to="/">LogOut</Link>
+              <NavLink onClick={clickHandler} className="nav-link active" aria-current="page" to="/">LogOut</NavLink>
             </li>
           </ul>
         </div>

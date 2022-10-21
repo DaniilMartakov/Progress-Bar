@@ -6,14 +6,14 @@ export default function Show({ entry, user }) {
   const { id } = useParams();
   const navigate = useNavigate();
   useEffect(() => {
-    console.log(id);
+    // console.log(id);
     if (!oneEntry) {
-      console.log('ertyu', oneEntry);
+      // console.log('ertyu', oneEntry);
       fetch(`/api/v1/entries/${id}`)
         .then((res) => res.json())
         .then((data) => setOneEntry(data));
     }
-    console.log(oneEntry);
+    // console.log(oneEntry);
   }, []);
 
   const deleteHandler = () => {

@@ -66,3 +66,87 @@ function LogIn({ setUser }) {
 }
 
 export default LogIn;
+
+  // <div className="register-form">
+  //   <div className="form">
+  //     <form onSubmit={submitHandler}>
+  //       <label htmlFor="usr">
+  //         <p className="label-txt">ФИ сотрудника, которому предназначен опросник:</p>
+  //         <input
+  //           onChange={inputHandler}
+  //         // value={data.title || ''}
+  //           name="nameOfTarget"
+  //           type="text"
+  //           className="input"
+  //           id="usr"
+  //         />
+  //         <div className="line-box">
+  //           <div className="line" />
+  //         </div>
+  //       </label>
+  //       <br />
+  //       <label htmlFor="usr">
+  //         <p className="label-txt">Название команды:</p>
+  //         <input
+  //           onChange={inputHandler}
+  //         // value={data.title || ''}
+  //           name="nameOfTarget"
+  //           type="text"
+  //           className="input"
+  //           id="usr"
+  //         />
+  //         <div className="line-box">
+  //           <div className="line" />
+  //         </div>
+  //       </label>
+  //       <br />
+  //       <label htmlFor="usr">
+  //         <p className="label-txt">ФИ проводника:</p>
+  //         <input
+  //           onChange={inputHandler}
+  //         // value={data.title || ''}
+  //           name="nameOfTarget"
+  //           type="text"
+  //           className="input"
+  //           id="usr"
+  //         />
+  //         <div className="line-box">
+  //           <div className="line" />
+  //         </div>
+  //       </label>
+  //       <br />
+  //       <label htmlFor="usr">
+  //         <p className="label-txt">Еще какой-то текст:</p>
+  //         <input
+  //           onChange={inputHandler}
+  //         // value={data.title || ''}
+  //           name="nameOfTarget"
+  //           type="text"
+  //           className="input"
+  //           id="usr"
+  //         />
+  //         <div className="line-box">
+  //           <div className="line" />
+  //         </div>
+  //       </label>
+  //       <br />
+
+
+  //       {/* <label htmlFor="pw">
+  //         <p className="label-txt">WRITE YOUR PASSWORD</p>
+  //         <input name="password" onChange={passHandler} type={flag ? 'password' : 'text'} style={{ color: validPassword(input) ? 'green' : 'red' }} className="input" id="pw" />
+  //         <div className="line-box">
+  //           <div className="line" />
+  //         </div>
+  //         <div className="mb-3 form-check box d-flex">
+  //           <input onClick={showPassword} type="checkbox" id="exampleCheck1" />
+  //           <label className="form-check-label check" htmlFor="exampleCheck1">Show password</label>
+  //         </div>
+  //       </label>
+  //       <br />
+  //       <div style={{ color: 'red' }}>{error}</div>
+  //       <br /> */}
+  //       <button type="submit" className="btn btn-outline-info btn-lg" style={{ width: '10rem' }}>LOGIN</button>
+  //     </form>
+  //   </div>
+  // </div>;

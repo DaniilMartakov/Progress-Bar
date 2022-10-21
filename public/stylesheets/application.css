@@ -18,6 +18,19 @@
   border-radius: 6px;
 }
 
+.containercolor {
+  margin: 20px auto;
+  width: 80%;
+  padding: 0px 20px 20px 20px;
+  /* margin-top: 6%; */
+  border: 1px dotted black;
+  text-align: center;
+  background: rgba(231, 224, 161, 0.178);
+  border-radius: 26px;
+  /* box-shadow: inset 4em 1em rgba(255, 217, 0, 0.747); */
+  line-height: 32px;
+}
+
 body {
   background: linear-gradient(138deg, #6df7be -10%, #32eafe 90%);
   height: 200vh;
@@ -56,11 +69,14 @@ body {
     margin-bottom: 2%;
 }
 
-
 /* body {
     background: -webkit-linear-gradient(left, #8BC34A, #00e1ff);;
 } */
-
+.grad {
+  background: linear-gradient(135deg, #12BCB0 20%, #FABE0E 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 form {
   width: 60%;
   margin: 60px auto;
@@ -70,6 +86,18 @@ form {
   -webkit-box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
   box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
 }
+
+/* #form2 {
+  width: 60%; 
+   margin: 60px auto;
+  background: #efefef;
+  /* padding: 60px 80px 80px 80px; */
+  /* text-align: center;
+  -webkit-box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+} */ 
+
+
 label {
   display: block;
   position: relative;
@@ -141,14 +169,26 @@ label {
 .message {
   margin-top: 2%;
 }
-
-/* .at-right{
-  position: relative;
-
+.card{
+  width: 250px;
 }
 
-.to-right {
-  position: absolute;
+.card{
+  width: 400px;
 
-} */
 
+}
+.inner {
+  height: 100%;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  /* width: 80%; */
+  background: rgb(18, 231, 48);
+  /* transition: all 0.3s ease-in-out; */
+  background: linear-gradient(90deg, rgba(18, 231, 48, 1) 0%, rgba(0, 212, 255, 1) 100%);
+}
+
+.row {
+  margin-bottom: 5%;
+}

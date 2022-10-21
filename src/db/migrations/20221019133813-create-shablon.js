@@ -17,6 +17,9 @@ module.exports = {
       coach: {
         type: Sequelize.STRING,
       },
+      target: {
+        type: Sequelize.STRING,
+      },
       user_id: {
         type: Sequelize.INTEGER,
         referenses: {
@@ -26,39 +29,51 @@ module.exports = {
       },
       q1: {
         type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
       q2: {
         type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
       q3: {
         type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
       q4: {
         type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
       q5: {
         type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
       q6: {
         type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
       q7: {
         type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
       q8: {
         type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
       q9: {
         type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
       q10: {
         type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
       q11: {
         type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
       q12: {
         type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
       createdAt: {
         allowNull: false,
