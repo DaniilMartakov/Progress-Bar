@@ -17,6 +17,9 @@ module.exports = {
       coach: {
         type: Sequelize.STRING,
       },
+      target: {
+        type: Sequelize.STRING,
+      },
       user_id: {
         type: Sequelize.INTEGER,
         referenses: {

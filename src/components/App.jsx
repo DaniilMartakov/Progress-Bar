@@ -31,14 +31,14 @@ function App({
       <div className="">
         <Routes>
           <Route path="/" element={<LogIn setUser={setUser} />} />
-          <Route path="/new" element={<Inputs setInputs={setInputs} />} />
-          <Route path="/shablone" element={<Shablone inputs={inputs} />} />
+          <Route path="/new" element={<Inputs inputs={inputs} setInputs={setInputs} user={user}/>} />
+          <Route path="/shablone/:id" element={<Shablone info={info} setInfo={setInfo} inputs={inputs} />} />
           <Route path="/homepage" element={<HomePage setUser={setUser} message={message} />} />
           <Route path="/logIn" element={<LogIn setUser={setUser} />} />
           <Route path="/list/all" element={<AllLists setCards={setCards} cards={cards} user={user} />} />
           <Route path="/list/my/:id" element={<MyLists setMyCards={setMyCards} Mycards={Mycards} user={user} />} />
           <Route path="/users" element={<AllUser setAllUser={setAllUser} allUser={allUser} />} />
-          <Route path="/one_shablon/:id" element={<Shablone setInfo={setInfo} info={info} />} />
+
         </Routes>
       </div>
     </div>

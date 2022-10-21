@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import FormList from './FormList';
 
 export default function MyLists({ Mycards, user, setMyCards }) {
@@ -18,6 +18,7 @@ export default function MyLists({ Mycards, user, setMyCards }) {
           user={user}
         />
       ))}
+      <Link rel="stylesheet" to="/new"> <button type='button'> Создать новое </button></Link>
     </div>
   );
 }

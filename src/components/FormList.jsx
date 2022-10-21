@@ -21,18 +21,21 @@ export default function FormList({ el, user }) {
         <div className="card">
           <h5 onClick={clickHandler} className="card-header">{el.name}</h5>
           {add && (
-          <div className="card-body">
-            <h5 className="card-title">{el.name}</h5>
-            <p className="card-text">{el.team}</p>
-            <p className="card-text">{el.coach}</p>
-            <p className="inner" style={{ width: `${b}%` }}>
-              {b}
-              %
-            </p>
-            {user && user?.id === el.user_id && (
-            <Link to={`/one_shablon/${el.id}`} className="btn btn-outline-info">Shablon</Link>
-            )}
-          </div>
+            <div className="card-body">
+              <h5 className="card-title">{el.name}</h5>
+              <p className="card-text">{el.team}</p>
+              <p className="card-text">{el.coach}</p>
+              <p className="card-text">
+                {b}
+                %
+              </p>
+              {user && user?.id === el.user_id && (
+              <>
+                <Link to={`/one_shablon/${el.id}`} className="btn btn-outline-info">Shablon</Link>
+                <button className="btn btn-outline-info" onClick={() => { navigator.clipboard.writeText('dfsgfh'); }} type="button"> Скопировать </button>
+              </>
+              )}
+            </div>
           )}
         </div>
       </div>
