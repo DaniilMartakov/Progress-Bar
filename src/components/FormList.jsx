@@ -33,7 +33,7 @@ export default function FormList({ el, user }) {
                 <Link to={`/one_shablon/${el.id}`} style={{ width: '59%' }} className="btn btn-outline-info">Shablon</Link>
                 <br />
                 <br />
-                <button className="btn btn-outline-info" style={{ width: '59%' }} onClick={() => { navigator.clipboard.writeText(`http://localhost:3000/one_shablon/${el.id}`); }} type="button"> Ссылка </button>
+                <button className="btn btn-outline-info" style={{ width: '59%' }} onClick={() => { navigator.clipboard.writeText(`https://gorbatayaountain.herokuapp.com/one_shablon/${el.id}`); }} type="button"> Ссылка </button>
               </>
               )}
             </div>
