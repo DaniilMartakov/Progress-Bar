@@ -13,7 +13,7 @@ export default function FormList({ el, user }) {
       a += 1;
     }
   });
-  const b = ((a / 11) * 100).toFixed();
+  const b = ((a / 12) * 100).toFixed();
 
   return (
     <div className="row">
@@ -25,14 +25,15 @@ export default function FormList({ el, user }) {
               <h5 className="card-title">{el.name}</h5>
               <p className="card-text">{el.team}</p>
               <p className="card-text">{el.coach}</p>
-              <p className="card-text">
-                {b}
-                %
+              <p className="inner" style={{ width: `${b}%` }}>
+                {b}%
               </p>
               {user && user?.id === el.user_id && (
               <>
-                <Link to={`/one_shablon/${el.id}`} className="btn btn-outline-info">Shablon</Link>
-                <button className="btn btn-outline-info" onClick={() => { navigator.clipboard.writeText('dfsgfh'); }} type="button"> Скопировать </button>
+                <Link to={`/one_shablon/${el.id}`} style={{ width: '59%' }} className="btn btn-outline-info">Shablon</Link>
+                <br />
+                <br />
+                <button className="btn btn-outline-info" style={{ width: '59%' }} onClick={() => { navigator.clipboard.writeText(`http://localhost:3000/one_shablon/${el.id}`); }} type="button"> Ссылка </button>
               </>
               )}
             </div>

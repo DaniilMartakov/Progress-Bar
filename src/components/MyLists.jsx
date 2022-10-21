@@ -10,15 +10,23 @@ export default function MyLists({ Mycards, user, setMyCards }) {
   }, []);
   // console.log(Mycards);
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-evenly', position: 'relative' }}>
-      {Mycards?.map((el) => (
-        <FormList
-          key={el.id}
-          el={el}
-          user={user}
-        />
-      ))}
-      <Link rel="stylesheet" to="/new"> <button type='button'> Создать новое </button></Link>
-    </div>
+    <>
+      <Link rel="stylesheet" className="btn btn-info" to="/new">
+        {' '}
+        Создать новое
+      </Link>
+      <br />
+      <br />
+      <br />
+      <div style={{ display: 'flex', justifyContent: 'space-evenly', position: 'relative', flexWrap: "wrap", }}>
+        {Mycards?.map((el) => (
+          <FormList
+            key={el.id}
+            el={el}
+            user={user}
+          />
+        ))}
+      </div>
+    </>
   );
 }

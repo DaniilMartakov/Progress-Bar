@@ -39,6 +39,7 @@ router.route('/all_shablons')
   .get(async (req, res) => {
     const allLists = await Shablon.findAll({ order: [['id', 'DESC']] });
     res.json(allLists);
+  });
 
 router.route('/one_shablon/:id')
   .get(async (req, res) => {
@@ -54,12 +55,14 @@ router.route('/one_shablon/:id')
 
 router.route('/createshablon')
   .post(async (req, res) => {
-    console.log(req.body)
+    console.log(req.body);
     const {
-      name, team, coach, target, user_id
+      name, team, coach, target, user_id,
     } = req.body;
-    
-    const shablon = await Shablon.create({ name, team, coach, target, user_id });
+
+    const shablon = await Shablon.create({
+      name, team, coach, target, user_id,
+    });
     // console.log(shablon)
     res.json(shablon);
   });
@@ -68,13 +71,13 @@ router.route('/all_shablons/:id')
   .get(async (req, res) => {
     const myLists = await Shablon.findAll({ where: { user_id: req.params.id } }, { order: [['id', 'DESC']] });
     res.json(myLists);
-  }) // конкретный шаблон по id
+  }); // конкретный шаблон по id
 
 router.route('/users')
   .get(async (req, res) => {
     const allUser = await User.findAll();
     res.json(allUser);
-  })
+  });
 
 router.post('/addUser', async (req, res) => {
   const {

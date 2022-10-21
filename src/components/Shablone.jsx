@@ -37,7 +37,9 @@ export default function Shablone({ info, setInfo }) {
       }}
     >
       <p>
-        Привет, {info?.name}
+        Привет,
+        {' '}
+        {info?.name}
         !
       </p>
       И добро пожаловать в команду
@@ -149,7 +151,6 @@ export default function Shablone({ info, setInfo }) {
 
       </p>
       {/* <button type="submit">bla</button> */}
-
 
     </div>
   );
