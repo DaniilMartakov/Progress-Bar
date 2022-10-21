@@ -10,7 +10,7 @@ export default function MyLists({ Mycards, user, setMyCards }) {
   }, []);
   // console.log(Mycards);
   return (
-    <div>
+    <div style={{ display: 'flex', justifyContent: 'space-evenly', position: 'relative' }}>
       {Mycards?.map((el) => (
         <FormList
           key={el.id}

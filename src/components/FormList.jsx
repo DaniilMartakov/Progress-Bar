@@ -17,7 +17,7 @@ export default function FormList({ el, user }) {
 
   return (
     <div className="row">
-      <div className="col-3">
+      <div className="col-sm-6">
         <div className="card">
           <h5 onClick={clickHandler} className="card-header">{el.name}</h5>
           {add && (

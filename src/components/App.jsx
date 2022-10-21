@@ -10,8 +10,9 @@ import Shablone from './Shablone';
 import AllUser from './AllUsers';
 
 function App({
-  user: currentUser, logo, name, message, allUser: allUsersArray, allLists, myLists, shablone,
+  user: currentUser, logo, message, allUser: allUsersArray, allLists, myLists, shablone,
 }) {
+  const name = 'Высокая гора';
   const [cards, setCards] = useState(allLists || []);
   const [Mycards, setMyCards] = useState(myLists || []);
   const [allUser, setAllUser] = useState(allUsersArray || null);

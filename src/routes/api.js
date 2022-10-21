@@ -38,16 +38,18 @@ router.route('/logOut')
 router.route('/all_shablons')
   .get(async (req, res) => {
     const allLists = await Shablon.findAll({ order: [['id', 'DESC']] });
-    // console.log(allLists, '4');
     res.json(allLists);
-  })
-  .post(async (req, res) => { }); // создать
 
 router.route('/one_shablon/:id')
   .get(async (req, res) => {
-    const shablone = await Shablon.findOne({ where: { id: req.params.id } });
+    const shablone = await Shablon.findOne({ where: { id: req.params.id }, include: User });
     // console.log(shablone);
     res.json(shablone);
+  })
+  .put(async (req, res) => {
+    const a = req.body.name;
+    const t = await Shablon.update({ [a]: req.body.info[a] }, { where: { id: Number(req.params.id) } });
+    res.json(t[1]);
   });
 
 router.route('/createshablon')
@@ -67,34 +69,45 @@ router.route('/all_shablons/:id')
     const myLists = await Shablon.findAll({ where: { user_id: req.params.id } }, { order: [['id', 'DESC']] });
     res.json(myLists);
   }) // конкретный шаблон по id
-  .patch(async (req, res) => { }) // change  po id
-  .delete(async (req, res) => { }); // delete po id
 
 router.route('/users')
   .get(async (req, res) => {
     const allUser = await User.findAll();
-    // console.log('db', allUser);
     res.json(allUser);
   })
-  .post(async (req, res) => { }); // create new user
-
-router.route('/users/:id')
-  .patch(async (req, res) => { }) // change  user po id
-  .delete(async (req, res) => { }); // delete user po id
 
 router.post('/addUser', async (req, res) => {
-  const { name, username, password } = req.body;
-  if (!name || !username || !password) return res.json({ status: 400, message: 'Заполни все поля!!!' });
+  const {
+    name, username, password, status,
+  } = req.body;
+  // console.log(status);
+  if (!name || !username || !password || !status) return res.json({ status: 400, message: 'Заполните все поля!' });
   const hashPassword = await hash(password, 10);
   try {
-    const newUser = await User.create({ name, username, password: hashPassword });
-    res.json(newUser);
+    const newUser = await User.create({
+      name, username, password: hashPassword, status: !!Number(status),
+    });
+    res.json({ newUser, status: 200 });
   } catch (err) {
     console.error(err);
   }
 });
+router.patch('/password', async (req, res) => {
+  // console.log(req.body);
+  const user = await User.findByPk(req.body.id);
+  user.password = await hash(req.body.password, 10);
+  // console.log(user);
+  user.save();
+  res.sendStatus(200);
+});
+
+router.patch('/role', async (req, res) => {
+  // console.log(req.body);
+  const user = await User.findByPk(req.body.id);
+  user.status = !user.status;
+  // console.log(user);
+  user.save();
+  res.sendStatus(200);
+});
 
 export default router;
-
-//  /all [decs]
-//  /all/:id [decs]
