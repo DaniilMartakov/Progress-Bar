@@ -27,6 +27,7 @@ export default function Shablone({ info, setInfo }) {
     const data = await response.json();
     setInfo(data);
   };
+
   return (
     <div
       className="containercolor"
@@ -152,6 +153,7 @@ export default function Shablone({ info, setInfo }) {
 
       </p>
       {/* <button type="submit">bla</button> */}
+
     </div>
   );
 }

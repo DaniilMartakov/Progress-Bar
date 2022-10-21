@@ -7,13 +7,13 @@ export default function AllLists({ cards, user, setCards }) {
       .then((res) => res.json())
       .then((data) => {
         // console.log(data, '1');
-        setCards(data)
+        setCards(data);
         // console.log(data, '2');
       });
   }, []);
   // console.log(cards, '3');
   return (
-    <div>
+    <div style={{ display: 'flex' , justifyContent: 'space-evenly', position: 'relative'}}>
       { cards?.map((el) => (
         <FormList
           key={el.id}

@@ -169,9 +169,20 @@ label {
   width: 250px;
 }
 
-.cardlist{
-  display: flex;
-  /* justify-content: space-evenly;
-  position: relative; */
-  }
 
+.to-right {
+  position: absolute;
+
+} */
+.card{
+  width: 250px;
+
+
+}
+.inner {
+  height: 100%;
+  border-radius: 30px;
+  /* width: 80%; */
+  background: rgb(18, 231, 48);
+  /* transition: all 0.3s ease-in-out; */
+  background: linear-gradient(90deg, rgba(18, 231, 48, 1) 0%, rgba(0, 212, 255, 1) 100%);
