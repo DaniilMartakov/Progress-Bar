@@ -69,7 +69,6 @@ body {
     margin-bottom: 2%;
 }
 
-
 /* body {
     background: -webkit-linear-gradient(left, #8BC34A, #00e1ff);;
 } */
@@ -166,11 +165,10 @@ label {
 .message {
   margin-top: 2%;
 }
-
-/* .at-right{
-  position: relative;
-
+.card{
+  width: 250px;
 }
+
 
 .to-right {
   position: absolute;
@@ -178,6 +176,7 @@ label {
 } */
 .card{
   width: 250px;
+
 
 }
 .inner {
