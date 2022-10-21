@@ -1,5 +1,4 @@
 import express from 'express';
-import morgan from 'morgan';
 import path from 'path';
 import session from 'express-session';
 import store from 'session-file-store';
@@ -11,7 +10,7 @@ import lists from './routes/lists';
 
 dotenv.config();
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const app = express();
 const FileStore = store(session);
 
@@ -27,12 +26,10 @@ const sessionConfig = {
   },
 };
 
-app.engine('jsx', jsxRender);
-app.set('view engine', 'jsx');
+app.engine('js', jsxRender);
+app.set('view engine', 'js');
 
 app.set('views', path.join(__dirname, 'components'));
-
-app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
